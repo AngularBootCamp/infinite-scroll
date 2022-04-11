@@ -15,7 +15,7 @@
       <td>{{ employee.hourlyWage }}</td>
     </tr>
     <tr (whenVisible)="loadMore()">
-      <td *ngIf="!(doneLoading | async)" colspan="4">Loading...</td>
+      <td *ngIf="!!!(doneLoading | async)" colspan="4">Loading...</td>
     </tr>
   </tbody>
 </table>
