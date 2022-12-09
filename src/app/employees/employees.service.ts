@@ -1,4 +1,4 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -21,9 +21,11 @@ export class EmployeeService {
   constructor(private http: HttpClient) {}
 
   loadEmployees(pageIndex: number) {
-    const params = new HttpParams()
-      .set('_start', '' + pageIndex * pageSize)
-      .set('_limit', '' + pageSize);
+    const params = {
+      _start: pageIndex * pageSize,
+      _limit: pageSize
+    };
+
     return this.http.get<Employee[]>(apiUrl + '/employees/', {
       params
     });
