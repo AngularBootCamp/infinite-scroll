@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
 import {
+  Observable,
+  Subject,
   concatMap,
   map,
   scan,
   shareReplay,
   startWith
-} from 'rxjs/operators';
+} from 'rxjs';
 
 import { Employee, EmployeeService } from './employees.service';
 
