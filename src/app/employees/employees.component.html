@@ -1,4 +1,4 @@
-<table class="striped centered">
+<table>
   <thead>
     <tr>
       <th>First Name</th>
@@ -14,8 +14,10 @@
       <td>{{ employee.hoursWorked }}</td>
       <td>{{ employee.hourlyWage }}</td>
     </tr>
-    <tr (whenVisible)="loadMore()">
-      <td *ngIf="!!!(doneLoading | async)" colspan="4">Loading...</td>
+    <tr (appWhenVisible)="loadMore()">
+      <td *ngIf="(doneLoading | async) === false" colspan="4">
+        Loading...
+      </td>
     </tr>
   </tbody>
 </table>

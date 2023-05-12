@@ -8,10 +8,10 @@ import {
 } from '@angular/core';
 
 @Directive({
-  selector: '[whenVisible]'
+  selector: '[appWhenVisible]'
 })
 export class WhenVisibleDirective implements OnInit, OnDestroy {
-  @Output() whenVisible = new EventEmitter();
+  @Output() appWhenVisible = new EventEmitter();
 
   private observer: IntersectionObserver | undefined;
 
@@ -20,7 +20,7 @@ export class WhenVisibleDirective implements OnInit, OnDestroy {
   ngOnInit() {
     this.observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
-        this.whenVisible.emit();
+        this.appWhenVisible.emit();
       }
     }, {});
 

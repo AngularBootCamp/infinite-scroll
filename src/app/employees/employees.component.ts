@@ -45,6 +45,7 @@ export class EmployeesComponent {
   }
 
   loadMore() {
+    console.log('Loading...');
     this.fetchEmployees.next();
   }
 }
