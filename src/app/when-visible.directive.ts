@@ -8,7 +8,8 @@ import {
 } from '@angular/core';
 
 @Directive({
-  selector: '[appWhenVisible]'
+  selector: '[appWhenVisible]',
+  standalone: true
 })
 export class WhenVisibleDirective implements OnInit, OnDestroy {
   @Output() appWhenVisible = new EventEmitter();
