@@ -17,7 +17,7 @@ import { Employee, EmployeeService } from './employees.service';
 @Component({
   selector: 'app-employees',
   templateUrl: './employees.component.html',
-  styleUrls: ['./employees.component.scss'],
+  styleUrl: './employees.component.scss',
   standalone: true,
   imports: [NgFor, WhenVisibleDirective, NgIf, AsyncPipe]
 })
