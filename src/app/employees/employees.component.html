@@ -8,16 +8,18 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let employee of employees | async">
-      <td>{{ employee.firstName }}</td>
-      <td>{{ employee.lastName }}</td>
-      <td>{{ employee.hoursWorked }}</td>
-      <td>{{ employee.hourlyWage }}</td>
-    </tr>
+    @for (employee of employees | async; track employee) {
+      <tr>
+        <td>{{ employee.firstName }}</td>
+        <td>{{ employee.lastName }}</td>
+        <td>{{ employee.hoursWorked }}</td>
+        <td>{{ employee.hourlyWage }}</td>
+      </tr>
+    }
     <tr (appWhenVisible)="loadMore()">
-      <td *ngIf="(doneLoading | async) === false" colspan="4">
-        Loading...
-      </td>
+      @if ((doneLoading | async) === false) {
+        <td colspan="4">Loading...</td>
+      }
     </tr>
   </tbody>
 </table>

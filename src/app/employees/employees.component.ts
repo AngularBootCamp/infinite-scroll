@@ -1,4 +1,4 @@
-import { NgFor, NgIf, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import {
   Observable,
@@ -19,7 +19,7 @@ import { Employee, EmployeeService } from './employees.service';
   templateUrl: './employees.component.html',
   styleUrl: './employees.component.scss',
   standalone: true,
-  imports: [NgFor, WhenVisibleDirective, NgIf, AsyncPipe]
+  imports: [WhenVisibleDirective, AsyncPipe]
 })
 export class EmployeesComponent {
   doneLoading: Observable<boolean>;
